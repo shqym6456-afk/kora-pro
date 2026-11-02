@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>كورة برو</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f4f8;--cd:#fff;--tx:#12162b;--mu:#69708a;--ac:#3b3fd8;--gd:#f2a900;--ln:#e4e6ef;--lv:#e5384f;--ok:#0f9d63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--cd:#151b33;--tx:#eef0fa;--mu:#8e96b5;--ac:#7c83ff;--ln:#242c4a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1020;--cd:#151b33;--tx:#eef0fa;--mu:#8e96b5;--ac:#7c83ff;--ln:#242c4a;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--tx);font-family:Cairo,Tahoma,sans-serif}
+body{padding-bottom:84px;max-width:560px;margin:auto}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 16px 8px;display:flex;align-items:center;justify-content:space-between}
+header::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1{font-size:22px;font-weight:800;letter-spacing:-.3px}h1 b{color:var(--ac)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+.ib{width:38px;height:38px;border-radius:12px;background:var(--cd);border:1px solid var(--ln)}
+.pts{background:var(--gd);color:#1a1300;font-weight:800;border-radius:20px;padding:4px 12px;font-size:14px;margin-inline-end:8px}
+.days{display:flex;gap:8px;padding:4px 16px 10px;overflow-x:auto}
+.chip{padding:7px 16px;border-radius:20px;background:var(--cd);border:1px solid var(--ln);font-size:14px;white-space:nowrap;font-weight:600}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.lg{margin:10px 16px;background:var(--cd);border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+.lgh{padding:10px 14px;font-weight:800;font-size:14px;display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--ln)}
+.m{display:grid;grid-template-columns:1fr 78px 1fr;align-items:center;padding:12px 10px;width:100%;border-bottom:1px solid var(--ln);text-align:center}
+.m:last-child{border:0}
+.t{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:13px;font-weight:600}
+.bd{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:14px}
+.sc{font-size:22px;font-weight:800;direction:ltr}.st{font-size:12px;color:var(--mu)}
+.live{color:var(--lv);font-weight:800;font-size:12px}.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--lv);margin-inline-end:4px;animation:p 1.2s infinite}
+@keyframes p{50%{opacity:.2}}@media(prefers-reduced-motion:reduce){.live::before{animation:none}}
+.nw{margin:12px 16px;background:var(--cd);border:1px solid var(--ln);border-radius:16px;overflow:hidden;display:block;width:calc(100% - 32px);text-align:right}
+.nw .im{height:120px;display:grid;place-items:center;font-size:44px}
+.nw div.b{padding:12px 14px}.nw h3{font-size:16px;line-height:1.5}.nw p{font-size:12px;color:var(--mu);margin-top:6px}
+.nw.s{display:flex;align-items:center}.nw.s .im{width:84px;height:84px;flex:none;font-size:30px}
+.sec{padding:6px 16px;font-weight:800;font-size:18px}
+.card{margin:10px 16px;background:var(--cd);border:1px solid var(--ln);border-radius:16px;padding:14px}
+.pr{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;text-align:center}
+.stp{display:flex;align-items:center;gap:6px;direction:ltr}
+.stp button{width:30px;height:30px;border-radius:9px;background:var(--bg);border:1px solid var(--ln);font-weight:800}
+.stp span{font-size:20px;font-weight:800;min-width:20px}
+.go{width:100%;margin-top:12px;padding:10px;border-radius:12px;background:var(--ac);color:#fff;font-weight:800}
+.go[disabled]{background:var(--ok)}
+.lb{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--ln)}.lb:last-child{border:0}
+.lb .r{width:24px;font-weight:800;color:var(--mu)}.lb .n{flex:1}.lb.me{color:var(--ac);font-weight:800}
+.tb{width:100%;border-collapse:collapse;font-size:13px;text-align:center}
+.tb th{color:var(--mu);font-weight:600;padding:8px 4px;border-bottom:1px solid var(--ln)}.tb td{padding:9px 4px;border-bottom:1px solid var(--ln)}
+.tb td:nth-child(2){text-align:right;font-weight:600}.tb td:last-child{font-weight:800}
+.tb tr:nth-child(-n+2) td:first-child{box-shadow:inset -3px 0 var(--ok)}
+nav{position:fixed;bottom:0;left:0;right:0;max-width:560px;margin:auto;background:var(--cd);border-top:1px solid var(--ln);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:6}
+nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:600;color:var(--mu);padding:4px}
+nav button i{font-style:normal;font-size:20px}nav button.on{color:var(--ac)}
+.ov{position:fixed;inset:0;background:#0009;z-index:20;display:none;align-items:flex-end;justify-content:center}
+.ov.on{display:flex}
+.sh{background:var(--bg);width:100%;max-width:560px;max-height:88%;overflow:auto;border-radius:22px 22px 0 0;padding-bottom:calc(20px + env(safe-area-inset-bottom,0px))}
+.sh .hd{display:grid;grid-template-columns:1fr 90px 1fr;padding:18px 10px 8px;text-align:center;align-items:center}
+.tabs button{font-size:12px;padding:10px 2px}.bn{padding:6px 18px;font-size:13px}.bn b{display:block;margin-bottom:2px}.bn span{color:var(--mu)}.cm{display:flex;gap:10px;padding:9px 16px;font-size:14px;line-height:1.6;border-bottom:1px solid var(--ln)}.cm b{min-width:34px;color:var(--ac)}
+.cdg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.cdg div{background:var(--bg);border:1px solid var(--ln);border-radius:12px;padding:10px 0}.cdg b{display:block;font-size:26px;font-weight:800;color:var(--ac)}.cdg span{font-size:11px;color:var(--mu)}
+.tabs{display:flex;border-bottom:1px solid var(--ln);margin:6px 16px}
+.tabs button{flex:1;padding:10px;font-weight:600;color:var(--mu);border-bottom:3px solid transparent}.tabs button.on{color:var(--ac);border-color:var(--ac)}
+.ev{display:flex;gap:10px;padding:9px 16px;font-size:14px;align-items:center}.ev b{width:34px;color:var(--mu)}
+.pitch{margin:12px 16px;border-radius:14px;background:repeating-linear-gradient(#1a8a4f 0 40px,#188048 40px 80px);position:relative;aspect-ratio:3/4.4;overflow:hidden;border:2px solid #fff3}
+.pitch::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid #fff6}
+.pitch::after{content:"";position:absolute;left:50%;top:50%;width:70px;height:70px;margin:-35px;border:2px solid #fff6;border-radius:50%}
+.pl{position:absolute;transform:translate(-50%,-50%);text-align:center;color:#fff;font-size:10px;font-weight:600;width:52px;line-height:1.2;z-index:1}
+.pl i{display:grid;place-items:center;width:26px;height:26px;margin:0 auto 2px;border-radius:50%;font-style:normal;font-weight:800;font-size:11px;border:2px solid #fff}
+.q{font-size:17px;font-weight:800;line-height:1.6;margin:6px 0 12px}
+.op{display:block;width:100%;text-align:right;padding:12px;margin-bottom:8px;border-radius:12px;border:1.5px solid var(--ln);background:var(--bg);font-weight:600}
+.op.ok{border-color:var(--ok);background:#0f9d6322}.op.no{border-color:var(--lv);background:#e5384f22}
+.bar{height:8px;border-radius:8px;background:var(--ln);overflow:hidden}.bar i{display:block;height:100%;background:var(--gd)}
+.toast{position:fixed;top:70px;left:50%;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 18px;border-radius:20px;font-weight:600;font-size:14px;z-index:30;display:none}
+</style></head><body>
+<header><h1>كورة<b>برو</b></h1><div><span class="pts" id="pts">0 ن</span><button class="ib" onclick="th()" aria-label="الوضع">◐</button></div></header>
+<main id="v"></main>
+<nav id="nv"></nav>
+<div class="ov" id="ov" onclick="if(event.target===this)cl()"><div class="sh" id="sh"></div></div>
+<div class="toast" id="ts"></div>
+<script>
+const $=id=>document.getElementById(id);
+let T={},LG=[],M=[],ST={},LUT={},FEED=[],OPN=null,OTB=0,CON=false,LU=null;
+const N=a=>(T[a]&&T[a].ar)||a;
+const CL=new Proxy({},{get:(_,k)=>(T[k]&&T[k].c)||"#555"});
+const bd=a=>T[a]&&T[a].logo?`<img class="bd" alt="" src="${T[a].logo}" onerror="this.outerHTML=sh('${a}')" style="background:none;border-radius:0;width:36px;height:40px;object-fit:contain">`:sh(a);
+const sh=a=>`<svg class="bd" style="background:none;width:36px;height:40px" viewBox="0 0 36 40"><path d="M3 3h30v18c0 9-7 14-15 17C10 35 3 30 3 21z" fill="${CL[a]}" stroke="#fff" stroke-opacity=".7" stroke-width="2"/><text x="18" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#fff" font-family="Cairo,sans-serif">${String(a).slice(0,3)}</text></svg>`;
+const bg=x=>Date.parse(new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Baghdad"}).format(x));
+function apply(d){T=d.teams;LG=d.leagues;ST=d.standings;LUT=d.lineups||{};FEED=d.feed||[];LU=d.at?new Date(d.at):new Date();
+const old={};M.forEach(m=>old[m.id]=m);
+M=d.matches.map(m=>{const o=old[m.id];if(o){m.det=o.det;m.dt=o.dt}if(m.t){const k=Math.round((bg(new Date(m.t))-bg(new Date()))/864e5);m.d=k<=-2?-6:k>=3?7:k}else m.d=0;return m});
+if(LG.length&&!LG.find(l=>l.id==S.lg))S.lg=LG[0].id}
+const rf=()=>{if(OPN)op(OPN,OTB);else R()};
+async function load(){try{const r=await fetch("/api/state");apply(await r.json());rf()}catch(e){}}
+function go(){const es=new EventSource("/api/stream");es.onopen=()=>{CON=true;rf()};es.onerror=()=>{CON=false};
+es.onmessage=e=>{const m=JSON.parse(e.data);if(m.type=="state"){CON=true;apply(m.data);rf()}else if(m.type=="alert"){toast(m.text,5500);if(navigator.vibrate)try{navigator.vibrate(120)}catch(x){}}}}
+setInterval(()=>{if(!CON)load()},30000);
+const tf=new Intl.DateTimeFormat("ar-IQ-u-nu-arab",{timeZone:"Asia/Baghdad",hour:"numeric",minute:"2-digit",hour12:true}),df=new Intl.DateTimeFormat("ar-IQ-u-nu-arab",{timeZone:"Asia/Baghdad",day:"numeric",month:"long"}),dg=new Intl.DateTimeFormat("ar-IQ-u-nu-arab",{timeZone:"Asia/Baghdad",weekday:"long",day:"numeric",month:"long"});
+const tm=m=>m.t?tf.format(new Date(m.t)):"",dt=m=>m.t?df.format(new Date(m.t)):"",dl=m=>dg.format(new Date(m.t))+" • "+tm(m)+" بتوقيت بغداد";
+function CM(m){const D=m.det,h=N(m.h),a=N(m.a),o=[[0,`انطلقت المباراة بين ${h} و${a}.`]],ev=D.ev.slice().sort((x,y)=>x[0]-y[0]),K={},dn={};let hh=0,aa=0,hf=false;
+ev.forEach(e=>{if(e[1]=="s"){const k=e[0]+e[2];K[k]=(K[k]||0)+1}});
+ev.forEach(e=>{if(!hf&&e[0]>45){o.push([45,`نهاية الشوط الأول: ${h} ${hh}-${aa} ${a}.`]);hf=true}const T=e[2]=="h"?h:a,k=e[0]+e[2];
+if(e[1]=="g"){e[2]=="h"?hh++:aa++;o.push([e[0],`⚽ هدف ل${T}${e[3]?" بقدم "+e[3]:""}! ${h} ${hh}-${aa} ${a}.`])}else if(e[1]=="y")o.push([e[0],`بطاقة صفراء في صفوف ${T}.`]);else if(e[1]=="r")o.push([e[0],`🟥 بطاقة حمراء! ${T} يكمل المباراة بعشرة لاعبين.`]);else if(!dn[k]){dn[k]=1;const n=K[k];o.push([e[0],`${n==1?"تبديل":n==2?"تبديلان":"ثلاثة تبديلات"} في صفوف ${T}.`])}});
+if(m.s=="ft"){if(!hf)o.push([45,`نهاية الشوط الأول: ${h} ${hh}-${aa} ${a}.`]);o.push([90,`نهاية المباراة: ${h} ${m.hs}-${m.as} ${a}. ${D.st?`الاستحواذ ${D.st[0][0]}% مقابل ${D.st[1][0]}%، والتسديدات ${D.st[0][1]} مقابل ${D.st[1][1]}.`:""}`])}else o.push([ev.length?ev[ev.length-1][0]:1,"المباراة مستمرة الآن، وتتحدث الأحداث عند إعادة بناء الصفحة."]);
+return o.sort((x,y)=>x[0]-y[0])}
+const QZ=[["من هو الهداف التاريخي لكأس العالم؟",["ميروسلاف كلوزه","رونالدو","ميسي"],0],["كم لاعباً في الفريق داخل الملعب؟",["10","11","12"],1],["أي دولة فازت بكأس العالم 2022؟",["فرنسا","الأرجنتين","البرازيل"],1],["كم مدة المباراة الأساسية بالدقائق؟",["80","90","100"],1],["من حقق الكرة الذهبية أكثر من غيره؟",["ميسي","رونالدو","كرويف"],0]];
+let S={tab:0,day:0,lg:1,pts:0,pr:{},qi:0,qs:0,qd:null,done:0};
+try{Object.assign(S,JSON.parse(localStorage.getItem("kp")||"{}"))}catch(e){}
+S.tab=0;
+const sv=()=>{try{localStorage.setItem("kp",JSON.stringify({pts:S.pts,pr:S.pr,done:S.done}))}catch(e){}};
+const toast=(t,ms=1800)=>{const e=$("ts");e.textContent=t;e.style.display="block";clearTimeout(window._tt);window._tt=setTimeout(()=>e.style.display="none",ms)};
+function th(){const r=document.documentElement,d=matchMedia("(prefers-color-scheme:dark)").matches;const c=r.dataset.theme||(d?"dark":"light");r.dataset.theme=c==="dark"?"light":"dark"}
+const NV=[["⚽","المباريات"],["📰","الأخبار"],["🎯","التوقعات"],["🏆","التحدي"],["📊","الدوريات"]];
+function nav(){$("nv").innerHTML=NV.map((n,i)=>`<button class="${S.tab==i?"on":""}" onclick="S.tab=${i};R()"><i>${n[0]}</i>${n[1]}</button>`).join("");$("pts").textContent=S.pts+" ن"}
+function row(m){const mid=m.s=="pp"||m.s=="cn"?`<div class="live" style="color:var(--gd)">${m.note||(m.s=="pp"?"مؤجلة":"ملغاة")}</div><div class="st">${tm(m)}</div>`:m.s=="ns"?`<div class="sc" style="font-size:16px">${tm(m)}</div><div class="st">${m.d>=2?dt(m):(m.t&&Date.parse(m.t)<Date.now()?"بدأت":"لم تبدأ")}</div>`:`<div class="sc">${m.hs} - ${m.as}</div>${m.s=="live"?`<div class="live">${m.ml||"مباشر"}</div>`:`<div class="st">انتهت</div>`}`;
+return `<button class="m" onclick="op(${m.id})"><div class="t">${bd(m.h)}${N(m.h)}</div><div>${mid}</div><div class="t">${bd(m.a)}${N(m.a)}</div></button>`}
+function V0(){const dn=[["الأسبوع الماضي",-6],["أمس",-1],["اليوم",0],["غداً",1],["بعد غد",2],["الأسبوع القادم",7]];let h=`<div class="days">${dn.map(d=>`<button class="chip ${S.day==d[1]?"on":""}" onclick="S.day=${d[1]};R()">${d[0]}</button>`).join("")}</div><p class="st" style="padding:0 18px">${CON?"🟢 متصل مباشرة":"🔴 غير متصل"} • آخر تحديث ${LU?tf.format(LU):"—"} • بتوقيت بغداد</p>`;
+const ms=M.filter(m=>m.d==S.day);if(!ms.length)h+=`<p class="card st">لا توجد مباريات في هذا اليوم.</p>`;
+LG.forEach(l=>{const a=ms.filter(m=>m.lg==l.id).sort((x,y)=>(y.s=="live")-(x.s=="live"));if(a.length)h+=`<div class="lg"><div class="lgh">${l.i} ${l.n}</div>${a.map(row).join("")}</div>`});return h}
+function V1(){return `<div class="sec">آخر الأحداث المباشرة</div>`+(FEED.length?FEED.map(f=>`<div class="nw s" style="cursor:default"><div class="im" style="background:linear-gradient(135deg,var(--ac),#0003)">${f.i}</div><div class="b"><h3>${f.text}</h3><p>${tf.format(new Date(f.at))}</p></div></div>`).join(""):`<p class="card st">لا توجد أحداث بعد. ستظهر هنا الأهداف والتأجيلات فور حدوثها.</p>`)}
+function V2(){const ns=M.filter(m=>m.s=="ns"&&m.d<=2&&(!m.t||Date.parse(m.t)>Date.now()));let h=`<div class="sec">توقّع النتيجة واكسب نقاطك</div><p class="st" style="padding:0 16px">نتيجة صحيحة = 5 نقاط، والفائز الصحيح = 2 نقطة.</p>`;
+ns.forEach(m=>{const p=S.pr[m.id],lk=!!p,v=p||TMP[m.id]||[1,1];h+=`<div class="card"><div class="st" style="text-align:center;margin-bottom:8px">${tm(m)} • ${dt(m)} • ${LG.find(l=>l.id==m.lg).n}</div><div class="pr"><div class="t">${bd(m.h)}${N(m.h)}</div><div class="stp">${lk?"":`<button onclick="sp(${m.id},0,1)">+</button>`}<span id="a${m.id}">${v[0]}</span>${lk?"":`<button onclick="sp(${m.id},0,-1)">-</button>`}<b>:</b>${lk?"":`<button onclick="sp(${m.id},1,1)">+</button>`}<span id="b${m.id}">${v[1]}</span>${lk?"":`<button onclick="sp(${m.id},1,-1)">-</button>`}</div><div class="t">${bd(m.a)}${N(m.a)}</div></div><button class="go" ${lk?"disabled":""} onclick="cf(${m.id})">${lk?"تم حفظ توقعك ✓":"أكّد التوقع"}</button></div>`});
+const lb=[["أحمد","1,240"],["سارة","1,115"],["خالد","980"],["أنت",S.pts+""],["ليلى","610"]];
+h+=`<div class="sec" style="margin-top:14px">المتصدرون (تجريبية)</div><div class="card">${lb.map((x,i)=>`<div class="lb ${x[0]=="أنت"?"me":""}"><span class="r">${i+1}</span><span class="n">${x[0]}</span><span>${x[1]} ن</span></div>`).join("")}</div>`;return h}
+const TMP={};function sp(id,k,d){const p=TMP[id]||(TMP[id]=[1,1]);p[k]=Math.max(0,Math.min(9,p[k]+d));$((k?"b":"a")+id).textContent=p[k]}
+function cf(id){S.pr[id]=TMP[id]||[1,1];S.pts+=1;sv();toast("تم حفظ التوقع +1 ن");R()}
+function V3(){const q=QZ[S.qi];let h=`<div class="sec">تحدي اليوم</div><div class="card"><div class="st" style="display:flex;justify-content:space-between"><span>السؤال ${Math.min(S.qi+1,5)} من 5</span><span>🔥 سلسلة ${S.done}</span></div><div class="bar" style="margin:8px 0 14px"><i style="width:${S.qi*20}%"></i></div>`;
+if(S.qi>=5)h+=`<div class="q" style="text-align:center">أنهيت التحدي! 🎉<br>نتيجتك ${S.qs} من 5</div><button class="go" onclick="S.qi=0;S.qs=0;S.qd=null;R()">أعد التحدي</button>`;
+else{h+=`<div class="q">${q[0]}</div>`+q[1].map((o,i)=>`<button class="op ${S.qd!=null?(i==q[2]?"ok":i==S.qd?"no":""):""}" ${S.qd!=null?"disabled":""} onclick="an(${i})">${o}</button>`).join("");if(S.qd!=null)h+=`<button class="go" onclick="S.qi++;S.qd=null;if(S.qi>=5){S.done++;sv()}R()">${S.qi==4?"النتيجة":"التالي"}</button>`}
+h+=`</div><div class="sec">مسابقات مفتوحة</div>`+[["توقعات الجولة 11","جائزة: 500 ن","🎯"],["تحدي الهدّافين","جائزة: 300 ن","👟"],["بطولة الأسبوع","جائزة: 1000 ن","🏅"]].map(c=>`<div class="card" style="display:flex;gap:12px;align-items:center"><span style="font-size:28px">${c[2]}</span><div style="flex:1"><b>${c[0]}</b><div class="st">${c[1]}</div></div><button class="chip on" onclick="S.tab=2;R()">شارك</button></div>`).join("");return h}
+function an(i){const q=QZ[S.qi];S.qd=i;if(i==q[2]){S.qs++;S.pts+=10;sv();toast("إجابة صحيحة +10 ن")}R()}
+function V4(){const t=ST[S.lg];return `<div class="days">${LG.map(l=>`<button class="chip ${S.lg==l.id?"on":""}" onclick="S.lg=${l.id};R()">${l.i} ${l.n}</button>`).join("")}</div><div class="card" style="padding:6px"><table class="tb"><tr><th>#</th><th>الفريق</th><th>لعب</th><th>ف</th><th>ت</th><th>خ</th><th>نقاط</th></tr>${t.map((r,i)=>`<tr><td>${i+1}</td><td>${N(r[0])}</td><td>${r[1]+r[2]+r[3]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join("")}</table></div><p class="st" style="padding:0 18px">الشريط الأخضر: أول مركزين. المصدر: بيانات مباشرة وقت إنشاء الصفحة.</p>`}
+function R(){$("v").innerHTML=[V0,V1,V2,V3,V4][S.tab]();nav()}
+let CDT;function cl(){OPN=null;clearInterval(CDT);$("ov").classList.remove("on")}
+function pitch(m,L0,nb){const L=L0||(m.det&&m.det.lu);if(!L||(!L.h&&!L.a))return `<p class="card st">التشكيلة غير متوفرة لهذه المباراة.</p>`;
+const side=(t,k,top)=>{if(!t)return"";let o="";[[t.gk],t.d,t.m,t.f].forEach((r,i)=>{const y=top?7+i*12:93-i*12;r.forEach((n,j)=>{o+=`<div class="pl" style="left:${(j+1)*100/(r.length+1)}%;top:${y}%"><i style="background:${CL[k]}">${n[0]}</i>${n}</div>`})});return o};
+const fm=(t,k)=>t?`${N(k)} ${t.d.length}-${t.m.length}-${t.f.length}`:`${N(k)} (لا بيانات)`;
+const bn=(t,k)=>t&&!nb?`<div class="bn"><b>${N(k)} • البدلاء</b><span>${t.b.join(" ، ")}</span></div>`:"";
+return `<div class="st" style="text-align:center">${fm(L.h,m.h)} (أعلى) • ${fm(L.a,m.a)} (أسفل)</div><div class="pitch">${side(L.h,m.h,1)}${side(L.a,m.a,0)}</div>${bn(L.h,m.h)}${bn(L.a,m.a)}`}
+const AD=n=>String(n).padStart(2,"0").replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+function tick(t){const e=document.getElementById("cdg");if(!e)return;const ms=Date.parse(t)-Date.now();if(ms<=0){e.innerHTML='<div style="grid-column:1/-1;font-weight:800;padding:12px">حان موعد المباراة ⚽</div>';clearInterval(CDT);return}const q=Math.floor(ms/1000),v=[Math.floor(q/86400),Math.floor(q%86400/3600),Math.floor(q%3600/60),q%60];e.querySelectorAll("b").forEach((x,i)=>x.textContent=AD(v[i]))}
+function opn(m,id,tab){const TB=["قبل المباراة","التشكيلة المتوقعة","الاحتمالات"];let b;
+if(tab==0)b=`<div class="card" style="text-align:center"><div class="st" style="margin-bottom:10px">تبدأ المباراة بعد</div><div class="cdg" id="cdg">${["يوم","ساعة","دقيقة","ثانية"].map(x=>`<div><b>٠٠</b><span>${x}</span></div>`).join("")}</div><div class="st" style="margin-top:12px">${dl(m)}</div></div><div class="card"><b>التشكيلة الرسمية</b><p class="st" style="margin-top:6px">تُعلن عادةً قبل المباراة بنحو ساعة. شاهد التوقعات في التبويب التالي.</p></div>`;
+else if(tab==1){const L={h:LUT[m.h],a:LUT[m.a]};b=(L.h||L.a)?pitch(m,L,1)+`<p class="st" style="padding:8px 18px;line-height:1.7">تشكيلة متوقعة مبنية على التشكيلة الأساسية لآخر مباراة متاحة لكل فريق. ليست تشكيلة رسمية، وقد تتغير بسبب الإصابات والإيقافات.</p>`:`<p class="card st">لا تتوفر بيانات كافية لتوقّع تشكيلة هذه المباراة بعد. تُعلن التشكيلة الرسمية قبل البداية بنحو ساعة.</p>`}
+else{const pr=S.pr[m.id];b=m.p?`<div class="card"><b>احتمالات الفوز (نموذج إحصائي)</b>${[["فوز "+N(m.h),m.p[0]],["تعادل",m.p[1]],["فوز "+N(m.a),m.p[2]]].map(x=>`<div style="margin-top:10px;font-size:13px;display:flex;justify-content:space-between"><span>${x[0]}</span><span>${x[1]}%</span></div><div class="bar"><i style="width:${x[1]}%"></i></div>`).join("")}${pr?`<p class="st" style="margin-top:12px">توقعك: ${pr[0]} - ${pr[1]}</p>`:`<button class="go" onclick="cl();S.tab=2;R()">توقّع الآن</button>`}</div>`:`<p class="card st">الاحتمالات غير متوفرة.</p>`}
+$("sh").innerHTML=`<div class="hd"><div class="t">${bd(m.h)}${N(m.h)}</div><div><div class="sc" style="font-size:16px">${tm(m)}</div><div class="st">${dt(m)}</div></div><div class="t">${bd(m.a)}${N(m.a)}</div></div><div class="tabs">${TB.map((t,i)=>`<button class="${tab==i?"on":""}" onclick="op(${id},${i})">${t}</button>`).join("")}</div>${b}`;$("ov").classList.add("on");if(tab==0){tick(m.t);CDT=setInterval(()=>tick(m.t),1000)}}
+function op0(id,tab=0){const m=M.find(x=>x.id==id),D=m.det;clearInterval(CDT);if(m.s=="ns"&&m.t)return opn(m,id,tab);const mid=m.s=="pp"||m.s=="cn"?`<div class="live" style="color:var(--gd)">${m.note||(m.s=="pp"?"مؤجلة":"ملغاة")}</div><div class="st">${tm(m)}</div>`:m.s=="ns"?`<div class="sc" style="font-size:16px">${tm(m)}</div>`:`<div class="sc">${m.hs} - ${m.as}</div>${m.s=="live"?`<div class="live">${m.ml||"مباشر"}</div>`:`<div class="st">انتهت</div>`}`;
+const TB=["التعليق","الأحداث","التشكيلة","الإحصائيات","الاحتمالات"];let b;const no=t=>`<p class="card st">${t} غير متوفر لهذه المباراة في المصدر الحالي.</p>`;
+if(tab==0)b=D?CM(m).reverse().map(c=>`<div class="cm"><b>${c[0]}'</b><span>${c[1]}</span></div>`).join("")+`<p class="st" style="padding:10px 18px">تعليق نصي مبني على أحداث المباراة الفعلية، وليس تعليقاً صوتياً.</p>`:no("التعليق");
+else if(tab==1){if(!D)b=no("سجل الأحداث");else{let hs=0,as=0;b=D.ev.map(e=>{let t=e[2]=="h"?m.h:m.a;if(e[1]=="g"){e[2]=="h"?hs++:as++}return `<div class="ev"><b>${e[0]}'</b><span>${e[1]=="g"?"⚽":e[1]=="y"?"🟨":e[1]=="r"?"🟥":"🔄"}</span><span>${e[1]=="g"?`هدف ${N(t)}${e[3]?" — "+e[3]:""} (${hs}-${as})`:e[1]=="y"?`بطاقة صفراء - ${N(t)}`:e[1]=="r"?`بطاقة حمراء - ${N(t)}`:`تبديل - ${N(t)}`}</span></div>`}).reverse().join("")}}
+else if(tab==2)b=pitch(m)+`<p class="st" style="padding:8px 18px">التوزيع مستنتج من مراكز اللاعبين في بيانات المباراة، والبدلاء بحسب القائمة المتاحة.</p>`;
+else if(tab==3){const SL=[[0,"الاستحواذ %"],[1,"التسديدات"],[2,"على المرمى"],[3,"ركنيات"],[4,"أخطاء"],[5,"بطاقات صفراء"],[8,"بطاقات حمراء"],[6,"تسلل"],[7,"تصديات"]];b=D&&D.st?SL.map(x=>{const[a,c]=[D.st[0][x[0]],D.st[1][x[0]]],t=(a+c)||1;return `<div style="padding:8px 16px"><div style="display:flex;justify-content:space-between;font-weight:800"><span>${a}</span><span class="st">${x[1]}</span><span>${c}</span></div><div class="bar" style="display:flex"><i style="width:${a/t*100}%;background:${CL[m.h]}"></i><i style="width:${c/t*100}%;background:${CL[m.a]}"></i></div></div>`}).join(""):no("الإحصائيات")}
+else{const pr=S.pr[m.id];b=m.p?`<div class="card"><b>احتمالات الفوز (نموذج إحصائي)</b>${[["فوز "+N(m.h),m.p[0]],["تعادل",m.p[1]],["فوز "+N(m.a),m.p[2]]].map(x=>`<div style="margin-top:10px;font-size:13px;display:flex;justify-content:space-between"><span>${x[0]}</span><span>${x[1]}%</span></div><div class="bar"><i style="width:${x[1]}%"></i></div>`).join("")}${pr?`<p class="st" style="margin-top:12px">توقعك: ${pr[0]} - ${pr[1]}</p>`:`<button class="go" onclick="cl();S.tab=2;R()">توقّع الآن</button>`}</div>`:`<p class="card st">الاحتمالات متاحة للمباريات القادمة فقط.</p>`}
+$("sh").innerHTML=`<div class="hd"><div class="t">${bd(m.h)}${N(m.h)}</div><div>${mid}</div><div class="t">${bd(m.a)}${N(m.a)}</div></div>${m.t?`<div class="st" style="text-align:center">${dl(m)}</div>`:""}<div class="tabs">${TB.map((t,i)=>`<button class="${tab==i?"on":""}" onclick="op(${id},${i})">${t}</button>`).join("")}</div>${b}`;$("ov").classList.add("on")}
+
+function op(id,tab=0){const m=M.find(x=>x.id==id);OPN=id;OTB=tab;op0(id,tab);
+if(m&&m.s!="ns"&&m.s!="pp"&&m.s!="cn"&&(!m.dt||Date.now()-m.dt>12000)){m.dt=Date.now();fetch("/api/match/"+id).then(r=>r.json()).then(j=>{m.det=j;if(OPN==id)op0(id,OTB)}).catch(()=>{})}}
+R();load();go();
+</script></body></html>

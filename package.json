@@ -1,0 +1,8 @@
+{
+  "name": "kora-pro-live",
+  "version": "1.0.0",
+  "description": "كورة برو - تطبيق كرة قدم بنتائج حية",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "demo": "MOCK=1 node server.js" },
+  "engines": { "node": ">=18" }
+}
